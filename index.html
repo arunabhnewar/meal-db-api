@@ -8,25 +8,87 @@
     <title>Meal API</title>
 
     <!-- bootstrap stylesheet---------------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--font awesome----------------------->
+    <script src="https://kit.fontawesome.com/4fa42c0453.js" crossorigin="anonymous"></script>
 
     <!-- css stylesheet--------------------->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-secondary mt-5">
-    <header></header>
+<body>
 
+    <!--header-------->
+    <header class="container sticky-lg-top">
+
+        <nav class="navbar navbar-expand-lg  menubar">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Master Chef</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link fw-bolder" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link fw-bolder" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link fw-bolder" href="#">Recipes</a>
+                        </li>
+
+                        <li class="nav-item mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fas fa-shopping-basket fw-bolder text-warning mt-2"><span class="mx-2"
+                                    id="cartCount">0</span></i>
+
+                            <!-- Button trigger modal -->
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Your Platters</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                        <!-- here all selected products goes -->
+                                        <div class="modal-body" id="cart-products"></div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Confirm Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--main------------>
     <main>
-        <h2 class="text-light text-center mb-5">Search your <span class="text-warning">favorite</span> food</h2>
+        <h2 class="text-light text-center mt-5 mb-5">Search your <span class="text-warning">favorite</span> food</h2>
 
         <!------------meal search area---------->
         <div class="input-group mb-3 w-50 mx-auto">
-            <input id="search-field" type="text" class="form-control" placeholder="Search your food"
+            <input id="search-field" type="text" class="form-control w-50" placeholder="Search your food"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
 
-            <button onclick="searchFood()" id="search-btn" class="btn btn-outline-light" type="button">Search</button>
+            <button onclick="searchFood()" id="search-btn" class="btn btn-outline-light ms-1"
+                type="button">Search</button>
         </div>
 
         <!------error meg--------------->
@@ -42,6 +104,7 @@
         </div>
     </main>
 
+    <!--footer--------->
     <footer></footer>
 
     <!------bootstrap js script--------------->

@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #222f3e;
+}
+.menubar {
+    background-color: #b2bec3;
+    /* opacity: 0.9; */
+}
+.fas {
+    font-size: 20px;
+}
+
 .error {
     color: tomato;
 }
