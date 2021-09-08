@@ -1,9 +1,12 @@
 document.getElementById('error-msg').style.display = 'none';
+
 const searchFood = () => {
     const searchFoodField = document.getElementById('search-field');
     const searchFieldText = searchFoodField.value;
+
     // reset search input value
     searchFoodField.value = '';
+
     // error msg
     document.getElementById('error-msg').style.display = 'none';
     if (searchFieldText == '') {
@@ -36,12 +39,12 @@ const displaySearchResult = meals => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div onclick="loadMealDetail(${meal.idMeal})" class="h-100 card">
-                <img src="${meal.strMealThumb}" class="card-img-top">
-                <div class="card-body">
-                <h4 class="card-title">${meal.strMeal}</h4>
-                    <p class="card-text">${meal.strInstructions.slice(0, 150)}</p>
-                </div>
+        <div onclick="loadMealDetail(${meal.idMeal})" class="h-100 m-3 bg-secondary">
+                <img src="${meal.strMealThumb}" class="card-img-top img-fluid">
+                <div class="card-footer text-center mt-2">
+                <h4 class="card-title text-warning">${meal.strMeal}</h4>
+                <button class='btn btn-info btn-sm mt-2 '>See details</button>
+                </div> 
             </div>
         `;
         searchResult.appendChild(div);
@@ -63,7 +66,7 @@ const displayMealDetails = meal => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-    <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
+    <img src="${meal.strMealThumb}" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">${meal.strMeal}</h5>
                 <h5 class="card-title">Origin: ${meal.strArea}</h5>
