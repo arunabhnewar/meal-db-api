@@ -15,3 +15,10 @@ body {
 .error {
     color: tomato;
 }
+
+.title {
+    font-size: 18px;
+}
+.text {
+    font-size: 12px;
+}

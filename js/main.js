@@ -42,7 +42,7 @@ const displaySearchResult = meals => {
         <div onclick="loadMealDetail(${meal.idMeal})" class="h-100 m-3 bg-secondary">
                 <img src="${meal.strMealThumb}" class="card-img-top img-fluid">
                 <div class="card-footer text-center mt-2">
-                <h4 class="card-title text-warning">${meal.strMeal}</h4>
+                <h4 class="card-title text-warning title">${meal.strMeal}</h4>
                 <button class='btn btn-info btn-sm mt-2 '>See details</button>
                 </div> 
             </div>
@@ -65,13 +65,14 @@ const displayMealDetails = meal => {
     mealDetails.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
+    div.style.maxWidth = '540px';
     div.innerHTML = `
-    <img src="${meal.strMealThumb}" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">${meal.strMeal}</h5>
-                <h5 class="card-title">Origin: ${meal.strArea}</h5>
-                <h5 class="card-title">Category: ${meal.strCategory}</h5>
-                <p class="card-text">${meal.strInstructions.slice(0, 150)}</p>
+    <img src="${meal.strMealThumb}" class="card-img-top h-25">
+            <div class="card-footer h-25 bg-secondary">
+                <h5 class="card-title text-warning title">${meal.strMeal}</h5>
+                <h5 class="card-title text-warning title">Origin: ${meal.strArea}</h5>
+                <h5 class="card-title text-warning title">Category: ${meal.strCategory}</h5>
+                <p class="card-text text-warning text">${meal.strInstructions.slice(0, 150)}</p>
                 <a href="${meal.strYoutube}" class="btn btn-primary">Youtube</a>
             </div>
     `;
